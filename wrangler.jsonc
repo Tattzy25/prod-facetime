@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "prod-facetime",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "facetimefy",
+          "database_id": "a6b8ed18-b53f-4494-8e5a-443798cf6eb5"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "d9393f68529e47fd8b84ba2268e44572",
+            "binding": "SECRET",
+            "secret_name": "facetimefy"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
